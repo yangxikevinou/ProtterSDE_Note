@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm,amssymb}
+
+\newtheorem{claim}{Claim}
+
+\newcommand{\E}{\mathbb{E}} % expectation
+\renewcommand{\P}{\mathbb{P}} % probability
+\newcommand{\I}{\mathbb{I}} % indicator
+\newcommand{\F}{\mathcal{F}} % filtration sigma-algebra
+
+\begin{document}
+\section{Lemma 3 Fix Continued}
+Quick fix to large jump parts in the proof of Lemma 3 in Protter (without upcrossing lemma). I am sorry that I was not specific in the note that I sent last week.
+
+\begin{proof}[Sketch]
+Recall that $c(x):=x\wedge 2N, \forall x\in[0,\infty)$ and $W^\pm(\delta):=\sup_{t\le u\le t+\delta} \E\left[c(|Z^\pm_t - Z^\pm_u|) \big| \F_t\right]$. Focus on the large up jumps, i.e. $W^+$, for now. Define the jump times of $Z^+$ inductively in increasing order as follows: $T_0:=0$ and ${ \forall n\in\mathbb{N}, T_{n+1}:=\inf\{t>T_n \big| \Delta Z^+_t > b > 0\} }$. For convenience, set $A_n:=\{T_n\le \nu\}, \forall n\in\mathbb{N}_+$. In other words, $A_n$ is the set that $Z^+$ at least $n$ jumps, while $A^c_n=\{T_n > \nu\}=\{T_n=\infty\}$ is the set that $Z^+$ has at most $n-1$ jumps (in $[0,\nu]$). Note that $T_n \uparrow \infty$ since $Z^+$ is cadlag, and hence $A_n \downarrow \emptyset$, modulo $\P$-null sets. Split the expectation in $W^+(\delta)$ into two parts according to the number of jumps of $Z^+$ (in $[0,\nu]$). Pick $k=k(a,\epsilon,b)$ to be determined later, we have
+\begin{align*}
+	& W^+(\delta) = \sup_{t\le u\le t+\delta} \left\{\E[c(|Z^+_t - Z^+_u|) \I_{A_k} \big| \F_t] + \E[c(|Z^+_t - Z^+_u|) \I_{A^c_k} \big| \F_t] \right\} \\
+    \le & \sup_{t\le u\le t+\delta} 2N\E[\I_{A_k} \big| \F_t] + \sup_{t\le u\le t+\delta} \E\left[\sum_{i=1}^{k} \Delta Z^+_{T_i}\I_{\{t\le T_i \le u\}} \big| \F_t\right] \\
+    \le & 2N \left\{ \sup_{t\in[0,\infty)} \E[\I_{A_k} \big| \F_t] + \sum_{i=1}^k \sup_{t\in[0,\infty)} \E[\I_{\{t\le T_i t+\delta\}} \big| \F_t] \right\}.
+\end{align*}
+For the first term, we use Doob's inequality to obtain
+\[\P\left(\sup_{t\in[0,\infty)} \E[\I_{A_k} \big| \F_t] > a\right) \le a^{-2}\E[\I^2_{A_k}] = a^{-2}\P(A_k). \]
+For each of the $k$ summands in the second term, we use Lemma 2 to obtain the desired bound, with $\delta=\delta(a,\epsilon,k)$. (Assume that $\nu$ is uniformly bounded $\P$-a.s. for convenience, since when invoked in the proof of Theorem, $\nu \le N$ is forced by definition.)
+
+\par
+Therefore, $W^+(\delta) \xrightarrow{\P} 0$ as $\delta \downarrow 0$. Ditto for $W^-$. By subadditivity, $W(\delta)$ converges to $0$ in probability as $\delta \downarrow 0$.
+\end{proof}
+
+\section{Fix of The Doob-Meyer Decomposition - General Case of Class Doob}
+\begin{claim}
+Suppose that $Z$ is of the form $Z=\Delta Z_{S}\I_{[S,\infty)}$ for some predictable stopping time $S$ with $\Delta Z_S$ integrable and $\E[\Delta Z_S \big| \F_{S^-}]=0$. Then $Z$ is a uniformly integrable martingale. 
+\end{claim}
+\end{document}
