@@ -1,0 +1,1086 @@
+\documentclass[openany,oneside]{book}
+\usepackage{fullpage}
+\usepackage{amsmath,amsthm,amssymb,mathtools,tikz,epsfig,enumerate}
+\usepackage{hyperref,titling,titlesec,pdfpages,setspace,fancyhdr,multicol}
+
+% formatting
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0pt}
+\titleformat{\chapter}[hang] 
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter:}{1em}{} 
+
+% statement environment
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+ 
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{eg}[thm]{Example}
+ 
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+
+% shorthand notations
+\newcommand{\E}{\mathbb{E}} % expectation
+\renewcommand{\P}{\mathbb{P}} % probability
+\newcommand{\I}{\mathbb{I}} % indicator
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert} % absolute value, or cardinality
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert} % norm
+
+\renewcommand{\d}{\mathrm{d}} % differential
+\newcommand{\sH}[1][2]{\mathcal{H}^{#1}} % H-space for integrators
+\newcommand{\pred}{\mathcal{P}} % predictable sigma-algebra
+\newcommand{\bP}{\mathrm{b}\pred} % bounded predictable sigma-algebra
+\renewcommand{\L}{\mathbb{L}} % left continuous process
+\newcommand{\bL}{\mathrm{b}\L} % bounded left continuous process
+
+% info
+\title{ProtterSDE_Note}
+\author{David Huckleberry Gutman and Yangxi Ou \\* Department of Mathematical Sciences \\* Carnegie Mellon University}
+\date{Fall 2016 and Spring 2017}
+\hypersetup{bookmarksnumbered=true, 
+			bookmarksopen=true,
+            unicode=true,
+            pdftitle=\thetitle,
+            pdfauthor=Yangxi Ou,
+            pdfstartview=FitH,
+            pdfpagemode=UseOutlines}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+\frontmatter
+
+% title and table of contents
+\begin{center}	
+	\textbf{\Large Notes on Protter's \\ Stochastic Integration and Stochastic Differential Equations} \\*[5ex]
+	\theauthor \\*[5ex]
+	Reading course with Professor Shreve, \thedate \\*[5ex]
+	\tableofcontents
+\end{center}
+
+
+% purpose and summary
+\chapter{}
+
+
+\mainmatter
+
+% chapter 1
+\chapter{Preliminaries (of stochastic analysis) and L\'evy processes}
+
+
+% chapter 2
+\chapter{Semimartingales (as integrators) and stochastic integrals (of caglad integrands)}
+
+\section{Introduction to semimartingales (as continuous linear operators)}
+
+\section{Stability properties of semimartingales}
+
+\section{Elementary examples of semimartingales}
+
+\section{Stochastic integrals (of caglad integrands)}
+
+\section{Properties of stochastic integrals}
+
+\section{The quadratic variations of a semimartingale}
+
+\section{It\^o's formula (change of variables)}
+
+\section{Applications of It\^o's formula}
+
+
+% chapter 3
+\chapter{Semimartingales (in the classical sense) and Decomposable Processes}
+
+\section{Introduction}
+
+\section{The classification of stopping times}
+
+\section{The Doob-Meyer Decompositions}
+
+\section{Quasimartingales}
+
+\section{Compensators}
+
+\section{The fundamental theorem of local martingales}
+
+\section{Classical semimartingales}
+
+\section{The Bichteler-Dellacherie Theorem}
+
+
+%% Jan 17, 2017, Tuesday, Week 1
+% chapter 4
+\chapter{General Stochastic Integration (of predictable integrands) and Local Times}
+
+\section{Introduction}
+
+\section{Stochastic integration for predictable processes}
+Recall that in Fall 2016 we defined $H\cdot X$ for $X$ a semimartingale and $H\in \bL$.
+
+\subsection{$\sH$ integrators and $\bP$ integrands}
+We will first define the stochastic integral $H\cdot X$ for $X\in \sH$ and $H\in \bP$.
+
+\par
+Assume that $X$ is a special semimartingale, i.e. $X=\overline{N}+\overline{A}$ is a canonical decomposition where $\overline{N}$ is a local martingale and $\overline{A}$ is a FV predictable process. Also assume $X_0=0$.
+
+\begin{defn}[$\sH$-norm]
+
+\end{defn}
+
+Canonical decomposition of stochastic integrals
+
+\begin{defn}[$d_X$-metric]
+
+\end{defn}
+
+\begin{thm}[$d_X$-density]
+
+\end{thm}
+Monotone Class Theorem
+
+\begin{defn}[$(\bP,\sH)$ stochastic integral]
+
+\end{defn}
+
+\begin{lem}[$(d_X,ucp)$ continuity]
+
+\end{lem}
+
+\subsection{$\sH$ integrators and integrable integrands}
+\begin{defn}[Integrable integrands]
+
+\end{defn}
+
+
+\subsection{Semimartingale integrators and locally integrable integrands}
+Recall that $X^{T^-}_t = X_t\I_{[0,T)}(t) + X_{T^-}\I_{[T,\infty)}(t)$, and by convention $X_{0^-}=0$.
+
+\begin{lem}[FV process with $L^2$-variation is $\sH$]
+
+\end{lem}
+
+\begin{thm}[Semimartingale is prelocally $\sH$-integrators]
+
+\end{thm}
+\begin{proof}
+Note that canonical decomposition may not exist.
+\end{proof}
+
+\begin{defn}[Semimartingale and $L(X)$ stochastic integral]
+
+\end{defn}
+
+
+%% Jan 19, 2017, Thursday, Week 1
+
+\begin{cor}[Characterization of $L(X)$]
+The converse is also true if $X$ is moreover a local martingale.
+\end{cor}
+
+\begin{thm}[Locally bounded processes are always integrable]
+If $X$ is a semimartingale and $H$ is predictable and locally bounded, then $H\in L(X)$.
+\end{thm}
+
+Properties of $H\cdot X$ when $H\in L(X)$
+\begin{itemize}
+\item Linearity
+\item Stopping
+\item Jumps
+\item Associativity
+\item Cross variations
+\end{itemize}
+
+Stopping: $(H\cdot X)^{T^-} = H\I_{[0,T)}\cdot X = H\cdot X^{T^-}$ if $T$ is predictable.
+
+\par
+\begin{thm}[Stochastic integral agrees with Lebesgue-Stieltjes integral whenever possible]
+\end{thm}
+
+\subsection{Multiple probability measures}
+change of measures $Q \ll \P$
+
+\begin{lem}
+Let $X\in \sH$ have canonical decomposition $X=\overline{N}+\overline{A}$. Then $\E\left[\overline{N},\overline{A}\right]_t = 0$ and $\E\left[X,X\right]_t = \E\left[\overline{N},\overline{N}\right]_t + \E\left[\overline{A},\overline{A}\right]_t$.
+\end{lem}
+\begin{proof}
+truncate and use the definition of natural process to show orthogonality.
+\end{proof}
+
+\begin{thm}[estimate]
+$\forall X\in \sH, \norm{X}_{\sH} \le \sup{H\in\bP} \le 5\norm{X}_{\sH}$
+\end{thm}
+\begin{proof}
+We know that $\norm{(H\cdot X)^\ast_\infty}_{L^2} \le \sqrt{8} \norm{H\cdot X}_{\sH} \le \sqrt{8}\norm{X}_{\sH}$.
+\par
+Let $X=\overline{N}+\overline{A}$ be the canonical decomposition. Compute
+\begin{align*}
+\norm{[X,X]^{1/2}_\infty}^2_{L^2} &= \E\left[X,X\right]_\infty \\
+\end{align*}
+So the right inequality holds, and it remains to show the left one.
+\par
+rewrite everything in $N$ and $X$.
+\end{proof}
+
+Ready to study change of measures. Think of the following $Z$ as the Radon-Nikodym derivative.
+\begin{lem}
+Let $A$ be a nonnegative nondecreasing process and $Z$ a nonnegative uniformly integrable martingale. Let $T$ be a stopping time such that $A_\infty = A_{T^-}$, and $k$ be a constant with $Z\le k$ on $[0,T)$. Then $\E[A_\infty Z_\infty] \le k \E A_\infty$.
+\end{lem}
+\begin{proof}
+integration by parts. stopping.
+\end{proof}
+
+\begin{lem}
+% Let $X$ be a semimartingale, $Q\ll \P$ with $Z_t :=\E_{\P}\left[\frac{\d Q}{\d \P} \big\vert \mathcal{F}_t\right]$. If $T$ is a stopping time such that $Z_t\le k$ on $[0,T)$, then $\norm{X^{T^-}}_{\sH(Q)} \le 5\sqrt{k}\norm{X^{T^-}}_{\sH(\P)}$
+\end{lem}
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}
+Let $X$ be a semimartingale and $H\in L_{\P}(X)$. If $Q\ll P$, then $H\in L_Q(X)$ and $H\cdot_Q X = H\cdot_{\P} X$ $Q$-almost surely.
+\end{thm}
+\begin{proof}
+By Girsanov-Meyer, if $X$ is a $\P$-semimartingale, then it is a $Q$-semimartingale.
+\par
+Let $(T_n)$ increases to infinity so that $X^{T_n^-} \in \sH(\P)$ and $H$ is $(\sH(\P),X^{T_n^-})$ integrable under $\P$. Let $Z_t$
+\par
+localize and truncate and montone convergence ...
+\end{proof}
+
+\begin{thm}[Local properties of stochastic integration]
+A,B,C
+\end{thm}
+\begin{proof}
+
+
+\end{proof}
+
+Exercise 45
+
+%% Jan 24, 2017, Tuesday, Week 2
+
+\begin{thm}[Convex combination of probabilities]
+Let $\{Q_k\}_{k=1}^\infty$ be a sequence of probability measures and define $\P:=\sum \lambda_k Q_k$, where $\lambda_k \ge 0, \forall k$ and $\sum \lambda_k = 1$. If $X$ is a semimartingale under $\P$ and $H\in L_{\P}(X)$, then for $k$ s.t. $\lambda_k >0$, $H\in L_{Q_k}(X)$ and $H\cdot_{\P} X = H\cdot_{Q_k} X$, $Q_k$-a.s.
+\end{thm}
+
+\begin{thm}[Stability of local martingale under integration] \label{stab_loc_mg}
+If $M$ is a local martingale and $H\in \pred$ locally bounded, then $H\cdot M$ is a local martingale.
+\end{thm}
+\begin{rem}
+Local boundedness cannot be dropped. An example is given by Emery.
+\end{rem}
+
+\begin{thm}[Stability of continuous local martingale under integration]
+$M$ is a continuous local martingale and $H\in \pred$ with $\int_0^t H^2_s \,d [M,M]_s < \infty, \forall t\in[0,\infty)$ a.s. Then $H\cdot M$ is a continuous local martingale.
+\end{thm}
+
+\begin{lem}[Stability of $L^2$ martingale under integration]
+Let $M$ be an $L^2$ martingale and $H\in\pred$ be s.t. $\E\int_0^\infty H^2_s \,d [M,M]_s < \infty$. Then $H\cdot M$ is an $L^2$ martingale with a last element.
+\end{lem}
+\begin{proof}
+We use truncation and density. Suffice to consider the last element only.
+\par
+Let $H_n = H \I_{\{\abs{H} \le n\}}$
+\end{proof}
+
+\begin{thm}[Stability of locally $L^2$ local martingale under integration]
+Let $M$ be a local $L^2$ local martingale and $H\in\pred$ be s.t. there is a sequence of stopping times $\{T_n\}_{n=1}^\infty$ increasing to $\infty$ with $\E\int_0^{T_n} H^2_s \,d [M,M]_s < \infty, \forall n$. Then $H\cdot M$ is a local $L^2$ local martingale.
+\end{thm}
+
+\begin{proof}[Proof of Theorem \ref{stab_loc_mg}]
+We use fundamental theorem of local martingale and localization.
+\par
+$M=N+A$, where $N$ is a local martingale with jumps bounded by $\beta$ and $A$ is a FV local martingale. Assume that $N$ is bounded and $M$ is a UI martingale. Assume that $H\in \bP$.
+\par
+Define $T^n:=\inf\{t\ge 0 : \abs{M_t} > n \textrm{ or } \int_0^t \abs{d A_s} > n \}$. Hence assume that $\E \int_0^t \abs{d A_s} < \infty$.
+\par
+Use Lemma and Lebesgue-Stieltjes integral, then we are done.
+\end{proof}
+
+\begin{cor}[Prelocal martingale is a local martingale]
+If $T$ is a predictable stopping time, $M$ is a local martingale, then $M^{T^-}$ is a local martingale.
+\end{cor}
+\begin{proof}
+Realize that $M^{T^-} = \I_{[0,T)}\cdot M$, where $\I_{[0,T)}$ is bounded predictable.
+\end{proof}
+
+\begin{thm}[]
+Let $M$ be a local martingale with bounded jumps. Let $H\in\pred$ s.t. $\int_0^t H_s \,d [M,M]_s < \infty, \forall t\in[0,\infty)$
+\end{thm}
+
+\subsection{Miscellaneous results}
+\begin{thm}[Stochastic Dominated Convergence]
+Let $X$ be a semimartingale and $\{H^m\}_{m=1}^\infty$ a sequence in $\pred$ s.t. $\lim_{m\to\infty} H^m_t = H^t$ a.s. $\forall t\ge 0$ (for pointwise time). If $\exists G\in L(X)$ s.t. $\abs{H^m} \le G, \forall m$, then $H$ and $H^m$ are in $L(X)$, and $H^m \cdot X \xrightarrow{ucp} H\cdot X$.
+\end{thm}
+\begin{proof}
+Observe that if $J,G\in\pred$ with $\abs{J}\le\abs{G}$ and $G\in L(X)$, then $J\in L(X)$. It is easy to see that $d_X(H^m,H) \to 0$.
+\end{proof}
+
+\begin{thm}[Coincidence of integral on smaller filtration]
+$\mathbb{F}:=\{\mathcal{F}_t\}_{t\ge 0}$ and $\mathbb{G}:=\{\mathcal{G}_t\}_{t\ge 0}$ with $\mathcal{F}_t \subseteq \mathcal{G}_t, \forall t$. Assume that $X$ is a semimartingale under both filtrations. Let $H$ be locally bounded and predictable for $\mathbb{F}$ (hence for $\mathbb{G}$). Then $H\cdot_{\mathbb{F}} X = H\cdot_{\mathbb{G}} X$ a.s.
+\end{thm}
+
+\begin{eg}[Emery]
+Let $T\sim \mathrm{EXP}(1)$, $U\sim \mathrm{U}\{-1,1\}$ and $U\perp T$. Set $X_t :=U\I_{\{T< t\}}$ and $\mathbb{F}$ be the augmented natural filtration of $X$. Then $X$ is a $\mathbb{F}$-martingale.
+\par
+If $\Lambda \in \mathcal{F}_t$ and $\Lambda \subseteq \{T\ge t\}$, then $\P(\Lambda) =0$ or $\P(\Lambda)=\P(T\ge t) = \exp(-t)$.
+\par
+Let $S$ be a stopping time with $\P(S>0)>0$. Define $\Lambda_t = \{S<t\le T\}$.
+\begin{enumerate}[\text{Case} I.]
+\item $\exists t_n \downarrow 0$, s.t. $\P(\Lambda_{t_n}) = \exp(-t_n), \forall n$. Then $\P(S=0)=1$.
+\item $\exists t_0 >0$, s.t. $\P(\Lambda_{t}) = 0, \forall t\in(0,t_0]$. Then $S\ge T$ a.s. on $\{T\le t_0\}$.
+\end{enumerate}
+\par
+Let $H_t = \frac{1}{t}\I_{\{t>0\}}$. Then $Z_t = \int_0^t H_s \,d X_s = \frac{1}{T}U\I_{\{T\le t\}}$, but $\E\abs{Z_t} = \int_0^t \frac{e^{-t}}{t}\,d t = \infty$
+
+\end{eg}
+
+%% Jan 26, 2017, Thursday, Week 2
+\begin{thm}[Special martingale under change of measure] \label{special}
+Let $X$ be a semimartingale. There exists $Q\sim \P$ s.t. $X$ is a special semimartingale under $Q$ and the canonical decomposition $X=\overline{N}+\overleftarrow{A}$ under $Q$ satisfies $\norm{[\overline{N},\overline{N}]_t^{1/2}}_{L^2(Q)} + \norm{\int_0^t\abs{d A_s}}_{L^2(Q)} < \infty, \forall t \in [0,\infty)$. Also, $\frac{d Q}{d\P}$ can be chosen to be bounded.
+\end{thm}
+
+\begin{lem}
+Let $\{X_n\}_{n=1}^\infty$ be a sequence of $\P$-a.s. bounded random variables. Then $\exists Q\sim \P$ s.t. $X_n \in L^2(Q), \forall n$ and $\frac{d Q}{d\P} \in L^\infty$
+\end{lem}
+
+\begin{proof}[Proof of Theorem \ref{special}]
+Since $[X,X]_n < \infty$ $\P$-a.s., $\forall n$, we can choose $Q_1 \sim \P$ with bounded density so that $\E_{Q_1}[X,X]_n < \infty, \forall n$.
+\par
+Set $J_t := \sup_{0< s\le t}\abs{\Delta X_s}$, then $J_t^2 \le [X,X]_t < \infty, \forall t$. Thus $X$ is special under $Q_1$, with canonical decomposition $X=M+B$ where $M$ is a local martingale and $B$ is FV. Further changing measures to $Q_2 \sim Q_1 \sim \P$ with $\frac{d Q_2}{d Q_1}\in L^\infty$ s.t. $\int_0^n \abs{d B_s} \in L^2(Q_2), \forall n$, we still have $[X,X]_n \in L^1(Q_2), \forall n$, and hence $X$ is special under $Q_2$, with canonical decomposition $X=\overline{N}+\overline{A}$.
+\par
+Note that $[X,X] \ge [\overline{N},\overline{N}]$, so it suffices to show $\forall t, \int_0^t \abs{d\overline{A}_s} \in L^2(Q_2)$. By Girsanov-Meyer (predictable version), we have $\overline{A}_t = B_t + \underbrace{\int_0^t \frac{1}{Z_{s-}} \,d\langle X,Z\rangle_s}_{V_t}$, where $Z_\infty := \frac{d Q_2}{d Q_1}$. Since $B_t\in L^2(Q_2)$, it suffices to show $\int_0^t \abs{d V_s} \in L^2(Q_2)$.
+\par
+Set $S:=H\cdot X$
+\end{proof}
+
+\begin{cor}[Lenglart's inclusion theorem]
+If $Q\sim\P$ with bounded density, then $\sH(\P) \subseteq \sH(Q)$.
+\end{cor}
+\begin{proof}
+$X\in \sH(\P)$
+\end{proof}
+
+
+\section{Martingale representation theorem}
+Question: consider $\mathcal{A} \subseteq \mathbf{M}_{loc}$. When are all local martingales stochastic integrals with integrators in $\mathcal{A}$? When are the stochastic integrals unique?
+
+\begin{defn}[$L^2$ bounded martingale]
+Let $\mathbf{M}^2_0$ denote the space of all martingales s.t. $\sup_t \E M^2_t < \infty$. $\mathbf{M}^2_0$ is a Hilbert space with inner product given by $(M,N) \mapsto \E[M_\infty N_\infty]$
+\end{defn}
+
+\begin{defn}[Stability under stopping]
+$F\subseteq \mathbf{M}^2_0$ is stable if for all stopping time $T$ and $M\in F$, $M^T \in F$.
+\end{defn}
+
+\begin{thm}[Stable closed subspace]
+If $F\subseteq \mathbf{M}^2_0$ is a closed subspace, then TFAE:
+\begin{enumerate}[(a)]
+\item 
+\item $F$ is stable.
+\item $\forall M\in F, H\in\bP, H\cdot M \in F$.
+\item $\forall M\in F, H\in\pred$, if $<\infty$, then $H\cdot M \in F$. 
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+$(d)\Rightarrow (c)$ is trivial.
+\par
+$(c)\Rightarrow (b)$
+\par
+$(b)\Rightarrow (a)$
+\par
+$(a)\Rightarrow (d)$
+
+\end{proof}
+
+\begin{defn}[Generated stable subspace]
+
+\end{defn}
+
+\begin{defn}[Strong orthogonality]
+
+\end{defn}
+\begin{rem}[Characterization of orthogonalities]
+We state without rigorous proof the following properties of strong and weak orthogonality. 
+\begin{enumerate}
+\item If $M$ is strongly orthogonal to $N$, then $MN$ is a UI martingale.
+\item $M$ is strongly orthogonal to $N$ iff $[M,N]$ is a UI martingale.
+\item $M$ is weakly orthogonal to $N$ iff $\E[M,N]_\infty =0$.
+\item Strong orthogonality implies weak orthogonality but not vice versa.
+\end{enumerate}
+\end{rem}
+
+\begin{defn}[Orthogonal complement]
+Let $\mathcal{A} \subseteq \mathbf{M}^2_0$, the weakly and strongly orthogonal complement of $\mathcal{A}$ are respectively 
+\end{defn}
+
+\begin{lem}[Strongly orthogonal complement]
+For $\mathcal{A} \subseteq \mathbf{M}^2_0$, $\mathcal{A}^\times$ is a stable closed subspace.
+\end{lem}
+\begin{proof}
+Show closedness under all three operations.
+\end{proof}
+
+% % Jan 31, 2017, Tuesday, Week 3
+
+
+% % Feb 2, 2017, Thursday, Week 3
+\begin{eg}[Singular extremal points of $\mathcal{M}^2(\mathcal{A})$]
+Let $\Omega:=\{H,T,F\}$, $\mathcal{F}_0:=\{\emptyset,\Omega\}$ trivial and $\mathcal{F}_1:=2^\Omega$, with $\P(H)=\P(T)=\P(F)=\frac{1}{3}$. Consider two martingales $X$ and $Y$ given by $X_0=Y_0=0$ and
+$$\begin{cases}
+X_1(H) = 1, & Y_1(H) = 1 \\
+X_1(F) = 0, & Y_1(H) = -2 \\
+X_1(T) = -1, & Y_1(H) = 1
+\end{cases}$$
+The $\mathbf{M}^2$ martingale measures of $\{X\}$ is given by $\mathcal{M}^2(X)=\{(p,p,1-2p) \big\vert 0\le p \le 1/2\}$. Clearly, there are two extremal points of $\mathcal{M}^2(X)$, when $p\in\{0,1/2\}$, i.e. the measures $(0,0,1)$ and $(1/2,1/2,0)$, and obviously they are mutually singular. This example shows that one should really drop the condition of equivalence of measures when considering extremal points.
+\end{eg}
+
+
+% % Feb 7, 2017, Tuesday, Week 4
+\begin{defn}[Separable measurable space]
+A measurable space $(\Omega,\mathcal{F})$ is separable if $\mathcal{F}=\sigma(\mathcal{A})$ for countable $\mathcal{A}$.
+\end{defn}
+\begin{rem}[Inheritance of separability]
+The Hilbert space $L^2(\Omega,\mathcal{F},\P)$ is separable if $(\Omega,\mathcal{F})$ is, because the collection of simple functions of the form $S=\sum_{i=1}^n a_i \I_{A_i}$ where $a_i\in\mathbb{Q}$ and $A_i\in\mathcal{A}$.
+\end{rem}
+
+\begin{thm}[Countable weakly orthogonal basis of $\mathbf{M}^2$]
+Let $(\Omega,\mathcal{F}, \mathbb{F}, \P)$ be a filtered probability space satisfying the usual hypothesis. Assume that $\mathcal{F}=\mathcal{F}_{\infty}$ is separable. Then there is a sequence $\{M_i\}_{i=1}^\infty \subseteq \mathbf{M}^2$ such that
+\begin{enumerate}
+\item $\E[M^i,M^j]_\infty =0$ if $i\ne j$
+\item $\sum_{i=1}^\infty \E[M^i,M^i]_{\infty} < \infty$
+\item $\forall N\in\mathbf{M}^2, \exists \{H^i\}_{i=1}^\infty, N=\sum_{i=1}^\infty H^i \cdot M^i$
+\end{enumerate}
+\end{thm}
+\begin{proof}
+One can obtain an orthonormal basis $\{\hat{M}^i\}_{i=0}^\infty \subseteq L^2(\Omega,\mathcal{F},\P)$. Assume WLOG that $\hat{M}^0$ is constant, and that $\E\hat{M}^i=0$. Set $M^i_t := \E\left(\frac{\hat{M}^i}{2^i} \big\vert\mathcal{F}_t\right)$, then clearly orthogonality and absolute summability are satisfied. Also the set $$I:=\left\{ \sum_{i=1}^\infty H^i \cdot M^i \big\vert H^i\in\pred, \sum_{i=1}^\infty \E\left(\int_0^\infty (H^i_s)^2 \,d[M^i,M^i]_s\right) < \infty \right\}$$ is a stable closed subspace containing $\{M^i\}$, so $I\supseteq \mathcal{S}(\{M^i\})$. The whole space $\mathbf{M}^2$ is spanned by $\{M^i\}$ due to the orthogonality of the last element.
+\end{proof}
+
+\begin{defn}[Quasi-left continuous filtration]
+$\{\mathcal{F}_t\}_t$ is called quasi-left continuous if for every predictable stopping time $T$, $\mathcal{F}_T = \mathcal{F}_{T^-}$.
+\end{defn}
+
+\begin{rem}
+Recall that martingales only jump at totally inaccessible times.
+\end{rem}
+
+\begin{defn}[Change of time]
+Let $A=\{A_t\}_t$ be adapted, right-continuous and increasing. Let $\tau_t:=\inf\{s>0 : A_s > t\}$, and $\tau$ is called the change of time.
+\end{defn}
+\begin{rem}[Properties of change of time]
+The following is obvious. \\
+\begin{enumerate}
+\item $\tau$ is right-continuous and increasing, with $\tau_{t^-} = \lim_{s\uparrow t} \tau_s$ exists.
+\item Since $\{\tau_{t^-} \le s\} = \{A_s \ge t\} \in \mathcal{F}_s$, $\tau_t = \lim_{\epsilon\downarrow 0}\tau_{(t+\epsilon)^-}$ is a $\{\mathcal{F}_t\}_t$ stopping time.
+\end{enumerate}
+\end{rem}
+
+\begin{thm}[Lebesgue's change of time]
+Let $(a_t)$ be a finite, positive, right-continuous and increasing function on $[0,\infty)$ and $(c_s)$ be corresponding change of time. Let $f\ge 0$ be Borel, $G$ be positive, finite and right-continuous with $G(0^-)=0$. Then
+\begin{align*}
+\int_0^\infty f(s) \,d G(a(s)) &= \int_0^\infty f(c(s^-))\I_{\{c(s^-)<\infty\}} \,d G(s) \\
+\int_0^\infty f(s) \,d a(s) &= \int_0^\infty f(c(s))\I_{\{c(s)<\infty\}} \,d s \\
+\int_0^{c(t)} f(s) \,d a(s) &= \int_0^t f(c(s)) \,d s
+\end{align*}
+\end{thm}
+
+\begin{defn}[Subspaces of $\mathbf{M}^2$ by continuity]
+$\mathbf{M}^{2,c} = \mathbf{M}^2 \cap C^0$ is a closed stable subspace, and hence one can define its orthogonal complement by $\mathbf{M}^{2,d}:=\mathbf{M}^{2} \ominus \mathbf{M}^{2,c}$, called the space of purely discontinuous $L^2$ bounded martingales. As a consequence, $\forall M\in \mathbf{M}^2, \exists ! (M^c, M^d) \in \mathbf{M}^{2,c} \oplus \mathbf{M}^{2,d}$ with $M=M^c + M^d$, where $M^c$ is called the continuous part of $M$ and $M^d$ the purely discontinuous part. 
+\end{defn}
+
+\begin{defn}[Purely discontinuous local martingale]
+
+\end{defn}
+
+
+\begin{defn}[Absolutely continuous filtered space]
+The filtered probability space $(\Omega, \mathcal{F}, \mathbb{F}, \P)$ is absolutely continuous if for every purely discontinuous locally square integrable local martingale $M$, it follows that $d\langle M,M\rangle_t \ll d t$
+\end{defn}
+
+\begin{thm}[Absolute continuity of compensators in absolute continuous space]
+Let $(\Omega, \mathcal{F}, \mathbb{F}, \P)$ be absolutely continuous. Any adapted counting process $N$ with totally inaccessible jump times and without explosion has absolutely continuous compensator $\tilde{N}$.
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}[]
+Suppose that $(\Omega, \mathcal{F}, \mathbb{F}, \P)$ is not absolutely continuous, $\mathbb{F}$ is quasi-left continuous, and $\mathcal{F}=\mathcal{F}_\infty$ is separable. Then there exists a time change $\tau$ such that $\mathcal{G}_t = \mathcal{F}_{\tau_t}$, and any $\mathbb{G}$-adapted counting process $N$ with totally inaccessible jump times and without explosion has absolutely continuous compensator $\tilde{N}$.
+\end{thm}
+\begin{proof}
+Let $\{M^i\}$ be an weakly orthogonal basis given as above. Set $A_t := t+\sum_{i=1}^\infty [M^i, M^i]_t$, and $C_t = \tilde{A}_t = t+\sum_{i=1}^\infty \langle M^i, M^i\rangle_t$, which is strictly increasing and continuous. Set $\tau_t := \inf\{s>0 : C_s > t\}$, which is again strictly increasing and continuous. Let $\mathcal{G}_t = \mathcal{F}_{\tau_t}$.
+\par
+Take any counting process $N$ with totally inaccessible jump times. Consider $X=N-\tilde{N}$. WLOG assume $X_\infty \in L^2$ by stopping. Let $L_t = N_{C_t}$. We have $[X,X]_t = N_t$ and $\langle X,X\rangle^\mathbb{G}_t = \tilde{N}_t$
+\end{proof}
+
+
+
+%% Feb 9, 2017, Thursday, Week 4
+\section{Martingale duality and Jacod-Yor theorem}
+The agenda is to develop the $L^p$ theory for $\sH$ spaces, and study its duality theory, including the bounded mean oscillation (BMO) space.
+
+\begin{defn}[$\mathcal{H}^p$ spaces]
+Let $M\in \mathbf{M}^{loc}$ be cadlag, define the $\mathcal{H}^p$-norm of $M$ as $\norm{M}_{\mathcal{H}^p}:=\E\left([M,M]_\infty^{p/2}\right)^{1/p}$. The $\mathcal{H}^p$ space is given by $\mathcal{H}^p:= \{M\in\mathbf{M}^{loc} \cap \mathbb{D} : \norm{M}_{\mathcal{H}^p} < \infty \}$.
+\end{defn}
+\begin{rem}
+$\mathcal{H}^p$ is a Banach space under $\norm{\cdot}_{\mathcal{H}^p}$.
+\end{rem}
+
+\begin{thm}[$\mathcal{H}^p$ space embeddings]
+$\forall p>q \ge 1, \mathcal{H}^p \subseteq \mathcal{H}^q$. And local martingales with integrable variations are in $\mathcal{H}^1$
+\end{thm}
+\begin{proof}
+Proof by Jensen and H\"older.
+\end{proof}
+
+\begin{thm}[Density]
+$\forall p>q \ge 1, cl_{\mathcal{H}^q}(\mathcal{H}^p) = cl_{\mathcal{H}^q}(\mathcal{H}^q \cap L^\infty) = \mathcal{H}^q$.
+\end{thm}
+\begin{proof}
+Proof by truncation. Set $M^n_t := \E[M_\infty \I_{\{M^*_\infty \le n\}}|\mathcal{F}_t]$.
+\end{proof}
+
+\begin{thm}[Local martingale is locally $\mathcal{H}^1$]
+A local cadlag martingale $M$ is locally in $\mathcal{H}^1$.
+\end{thm}
+\begin{proof}
+By Fundamental Theorem of Local Martingales, $M=N+U$, where $N$ is a local martingale with $\Delta N\le \beta$ $\P$-a.s., and $U$ is of locally integrable variation. Apply the above with localization arguments.
+\end{proof}
+
+Now we consider duality of $\mathcal{H}^p$ and introduce the BMO space. One can naturally identity an $\mathcal{H}^p$ martingale $M$ with its last element $M_\infty$, and import duality from $L^p$ spaces to have $(\mathcal{H}^p)^\ast = \mathcal{H}^{q}$, where $p\in(1,\infty)$ and $1/p+1/q=1$. But how about $p=1$? We need to introduce the bounded mean oscillation (BMO) space, based on a H\"older type inequality: Fefferman's inequality.
+
+\begin{defn}[BMO space]
+For $M\in \sH$, define the bounded mean oscillation (BMO) norm to be 
+\end{defn}
+\begin{rem}
+
+\end{rem}
+
+\begin{thm}[Fefferman's inequality]
+Let $M\in\mathcal{H}^1$ and $N\in BMO$, then $\E\int_0^\infty \abs{d[M,N]_s} \le \sqrt{2} \norm{M}_{\mathcal{H}^1} \norm{N}_{BMO}$.
+\end{thm}
+
+\begin{thm}[Strengthened Fefferman's inequality]
+Let $M\in\mathcal{H}^1$, $N\in BMO$ and $U$ be optional, then $\E\int_0^\infty \abs{U_s}\abs{d[M,N]_s} \le \sqrt{2} \E\left[\int_0^\infty \abs{U_s}^2 \,d[M,M]_s \right] \norm{N}_{BMO}$.
+\end{thm}
+\begin{rem}
+$U$ is optional and not necessarily predictable, so $U\cdot M$ does not make sense in general.
+\end{rem}
+\begin{proof}
+Set
+\begin{align*}
+C_t &:= \int_0^t U_s^2 \,d [M,M]_s \\
+K_t^2 &:= \sqrt{C_t} \\
+H_t^2 &:= \frac{U_t^2}{\sqrt{C_t} + \sqrt{C_{t^-} \I_{\{t>0\}}}} \I_{\{C_t >0\}}
+\end{align*}
+Compute
+\begin{align*}
+\frac{1}{\sqrt{2}} \E\int_0^\infty
+\end{align*}
+
+%% Feb 14, 2017, Tuesday, Week 5
+
+Integrate by parts (in Lebesgue-Stieltjes),
+\begin{align*}
+& \int_0^\infty K^2_s \,d[N,N]_s = K^2_\infty [N,N]_\infty - \int_0^\infty [N,N]_{s^-} \,d K^2_s
+\end{align*}
+\end{proof}
+
+We can now show that the dual of $\mathcal{H}^1$ is $BMO$.
+\begin{thm}[Equivalent characterization of BMO]
+Let $N\in \sH$, $N\in BMO$ iff $\forall M\in \sH, \E[N,M]_\infty \le C\norm{M}_{\mathcal{H}^1}$
+\end{thm}
+\begin{proof}
+Assume $N\in BMO$, then the inequality is given by Fefferman, with $C=\sqrt{2}\norm{N}_{BMO}$.
+\par
+Assume the converse, that is $\forall M\in \sH, \E[N,M]_\infty \le C\norm{M}_{\mathcal{H}^1}$. We want to show that $N\in BMO$. The idea is to use $N$ to test against itself and extract information of jumps of $N$.
+\par
+
+We need to control $\Delta N$ as well. Claim that $\Delta N\in L^\infty$.
+\par
+Fix a stopping time $T$, define $\Lambda:=\{\abs{\Delta N_T} > 2C\} \in \mathcal{F}_T$
+\end{proof}
+
+\begin{thm}[$BMO$ is dual to $\mathcal{H}^1$]
+$(\mathcal{H}^1)^* = BMO$
+\end{thm}
+\begin{proof}
+Standard argument of duality.
+\end{proof}
+
+
+%% Feb 16, 2017, Thursday, Week 5
+\begin{thm}[Jacod-Yor martingale representation]
+Consider a complete separable filtered probability space with $\mathcal{F}=\mathcal{F}_\infty$. Let $\mathcal{A}\subseteq \sH$ contain a constant martingale. Then $\mathcal{S}(\mathcal{A}) = \sH$ iff $\P$ is an extremal point of $\mathcal{M}^2(\mathcal{A})$.
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
+
+%% Feb 21, 2017, Tuesday, Week 6
+Emery's structure equations (Kevin).
+
+
+%% Feb 23, 2017, Thursday, Week 6
+$BMO_p$ spaces are equivalent
+
+inequality: $\forall a,b\ge 0, n\in \mathbb{N}_+, (a+b)^n \le e a^n + \frac{1}{\sqrt{2\pi}} n! e^n b^n$.
+
+\begin{lem}[Stroock's Lemma]
+Let $()$ be a filtered probability space satisfying the usual hypothesis. If $X$ is a cadlag process such that $\exists U\ge 0, \forall S\le T$ stopping times, $\E[\I_{\{T<\infty\}}\abs{X_T - X_{S^-}} \big\vert \mathcal{F}_S] \le \E[U \big\vert \mathcal{F}_S]$, then $\forall \alpha,\beta >0$, $\beta \P[X^\ast_\infty > \alpha + \beta] \le \E[U\I_{\{X^\ast_\infty>\alpha\}}]$. In particular, if $U$ is a constant with $U<\frac{1}{2e^2}$, then $\E[e^{X^\ast_\infty}] \le 2e + \frac{1}{1-2e^2 U}$.
+\end{lem}
+\begin{proof}
+Fix $\alpha,\beta>0$, define $S$, the hitting times. Note that $\{X^\ast_\infty > \alpha + \beta\} \subseteq \{\abs{X_T-X_{S^-} \ge \beta}\} \cap \{\abs{X_S} \ge \alpha\} \cap \{T<\infty\} \cap \{S<\infty\}$, then by Chebychev's inequality,
+
+Note that if $U$ is a constant, then the inequality says that the probability tail has an exponential decay, which is equivalent to the boundedness of exponential moment. Here we use another approach.
+
+By the inequality, $\E[\left((X^\ast_\infty-\beta)^+ + \beta \right)^n]$
+
+Use Taylor expansions, we have a bound of exponential moment of $X^\ast_\infty$.
+\end{proof}
+
+\begin{thm}[John-Nirenberg inequality]
+Let $M\in BMO_1$, with $\norm{M}_{BMO_1} < \frac{1}{2e^2}$. Then $\forall T$ stopping time, $\E[\exp\abs{M_\infty - M_{T^-}} \big\vert \mathcal{F}_T] \le 2e + 1/(1-2e^2 \norm{M}_{BMO_1})$.
+\end{thm}
+\begin{proof}
+Fix a stopping time $T$, and an event $\Lambda \in \mathcal{F}_T$. Set $X=(M-M^{T^-})\I_\Lambda$. We would like to use Stroock's lemma to bound the exponential moment. Consider two stopping times $S_1 \le S_2$, then
+\begin{align*}
+& X_{S_2} - X_{S_1^-} = \I_\Lambda \left[(M_{S_2}-M^{T^-}_{S_2}) - (M_{S_1}-M^{T^-}_{S_1})\right] \\
+& \E[\abs{X_{S_2} - X_{S_1^-}} \big\vert \mathcal{F}_{S_1}] \le \norm{M}_{BMO_1}
+\end{align*}
+Then apply Stroock's lemma.
+\end{proof}
+
+\begin{thm}
+$\forall M \in BMO_1, k\in \mathbb{N}_+, \norm{M}_{BMO_1} \le \norm{M}_{BMO_k} \le 32 e^2 k \norm{M}_{BMO_1}$
+\end{thm}
+\begin{proof}
+WLOG, normalize $M$ by its $BMO_1$-norm to $N$ so that $\norm{N}_{BMO_1} = \frac{1}{4e^2} < \frac{1}{2e^2}$. Then apply the inequality above.
+\end{proof}
+
+\section{Stochastic integration depending on a parameter}
+The goal of this section is to establish a Fubini theorem $\int_A \left(\int_0^t H^a_s \,d X_s\right) \,d\mu(a) = \int_0^t \left(\int_A H^a_s \,d\mu(a)\right) \,d X_s$
+
+\begin{thm}
+Let $(A,\mathcal{A})$ be a measurable space, and the sequence $\{Y^n(a,t,\omega)\}$ is jointly measurable with respect to $\mathcal{A} \otimes \mathcal{B}(\mathbb{R}_+) \otimes \mathcal{F}$ and for each $a\in\mathcal{A}$, $Y^n(a)$ is cadlag and Cauchy in ucp, then there is a jointly measurable ucp-limit $Y$ which is cadlag for each $a\in \mathcal{A}$.
+\end{thm}
+\begin{proof}
+Define $n_0(a)=0$, and $n_{k+1}(a)$ inductively, selecting the sequence in a measurable manner.
+\end{proof}
+\begin{rem}
+The point of the theorem is joint measurability of the limit. Completeness and path regularity of the limit is automatic.
+\end{rem}
+
+
+%% Feb 28, 2017, Tuesday, Week 7
+\begin{thm}
+$X$ is a semimartingale and $X_0=0$, $H(a,t,\omega) =: H^a_t \in b(\mathcal{A}\otimes\pred)$. Then $\exists Z(a,t,\omega)$ which is $\mathcal{A} \otimes \mathcal{B}(\mathbb{R}_+) \otimes \mathcal{F}$ measurable, such that $\forall a\in A$, $Z(a,t\omega)$ is a cadlag version of $\int_0^t H^a_u \,d X_u$.
+\end{thm}
+\begin{proof}
+We use the monotone class theorem. Consider $\mathcal{H}:=\{H\in b(\mathcal{A}\otimes\pred) \,\big\vert\, \textrm{ the statement is true }\}$. Use the previous theorem and stochastic dominated convergence to pass to the limit.
+\end{proof}
+
+\begin{cor}
+Replace boundedness of $H$ by $H^a \in L(X), \forall a\in A$. Then the conclusion of the theorem still holds.
+\end{cor}
+\begin{proof}
+Use truncation $H^a_n = H^a \I_{\{\abs{H^a} \le n\}}$ and stochastic dominated convergence to pass to the limit.
+\end{proof}
+
+\begin{thm}[Stochastic Fubini]
+$X$ is a semimartingale, $H^a_t \in b(\mathcal{A}\otimes\pred)$, $\mu$ is a finite measure on $(A,\mathcal{A})$. Define $Z^a_t := \int_0^t H^a_u \,d X_u$ and $H_t := \int_A H^a_t \,d\mu(a)$, then $\int_A Z^a_t \,d\mu(a) = \int_0^t H_u \,d X_u$
+\end{thm}
+\begin{proof}
+By pre-stopping, we can assume that $X\in\sH$. Use the canonical decomposition and linearity, we can further assume that $X$ is indeed an $\sH$ martingale, because the finite variation part satisfies the Fubini theorem in the Lebesgue sense. We will then again use the monotone class theorem.
+\par
+First consider $H(a,t,\omega)=K(t,\omega)f(a)$, and show stochastic Fubini for this special case.
+\par
+Second, take $H^n$ of the product form above which converges to $H$ pointwise (by definition of the product $\sigma$-algebra. Define $Z^a_n(t) := \int_0^t H^a_n(u) \,d X_u$ and $H_n(t) := \int_A H^a_n(t) \,d \mu(a)$. From above, we know $\int_A Z^a_n (t) \,d\mu(a) = \int_0^t H_n(u) \,d X_u$. We show that both have ucp-limits $\int_A Z^a(t) \,d\mu(a)$ and $\int_0^t H(u) \,d X_u$ respectively, by dominated convergence.
+\end{proof}
+
+\begin{thm}[Stochastic Fubini]
+Replace boundedness of $H$ by $(t,\omega) \mapsto \norm{H^\cdot_t(\omega)}_{L^2(\mu)} \in L(X)$, stochastic Fubini still holds.
+\end{thm}
+\begin{proof}
+Use truncation and stochastic dominated convergence.
+\end{proof}
+\begin{rem}
+The condition $\norm{H^\cdot_t}_L^2(\mu) \in L(X)$ ensures the integrability of the stochastic integral.
+\end{rem}
+
+\begin{eg}[Counterexample to stochastic Fubini if integrability relaxed]
+Construct $H^a, \mu, X$ such that $H$ is $\mathcal{A}\otimes\pred$ measurable, $H^a \in L(X)$ and $\int_A \abs{H^a_t} \,d\mu(a) \in L(X)$, but $Z^a_t = \int_0^t H^a_u \,d X_u \not\in L^1(\mu)$
+\par
+Let $A=\mathbb{N}$, $\mu$ be a finite measure on $\mathbb{N}$ and $\mu(\{a\})>0$. Let $X$ be a standard Brownian motion, and fixed a partition $t_0 < t_1 < \cdots < t_n < \cdots < 1$ of $[0,1]$. Set $H^a_t := \frac{1}{a\mu(\{a\}) \sqrt{t_a - t_{a-1}}} \I_{\{t_{a-1} < t\le t_a\}}$, which is bounded for each $a$. Compute $H_t := \int_A H^a_t \,d\mu(a) = \sum_{a=1}^\infty \frac{1}{a\sqrt{t_a - t_{a-1}}} \I_{\{t_{a-1} < t \le t_a\}}$, and $\int_0^\infty H^2_t \,d t = \sum_{a=1}^\infty a^{-2} < \infty$, so $H\in L^2(d t)$. However, $Z^a_t := \frac{1}{a\mu(\{a\})\sqrt{t_a - t_{a-1}}} (X_{t_a\wedge t} - X_{t_{a-1}\wedge t})$, and $\int_A \abs{Z^a_1} \,d\mu(a) = \sum_{a=1}^\infty \frac{\abs{X_{t_a}-X_{t_{a-1}}}}{a\sqrt{t_a - t_{a-1}}} = \infty$ by Kolmogorov three-series theorem.
+\end{eg}
+
+
+%% Mar 2, 2017, Thursday, Week 7
+%% canceled
+
+
+%% Mar 7, 2017, Tuesday, Week 8
+\section{Local times of semimartingales}
+Local time appears naturally in the extension of It\^o's formula from $C^2$ functions to convex functions.
+
+\begin{thm}[It\^o's formula for convex functions]
+Let $f$ be convex, $X$ a semimartingale. Then $f(X_t) = f(X_0) + \int_{0^+}^t f'(X_{s^-}) \,d X_s + A_t$, where $A$ is increasing, right continuous, and adapted, $\Delta A_t = f(X_t) - f(X_{t^-}) - f'(X_{t^-}) \Delta X_t$, and $f'$ is understood as the left derivative and hence the lower derivative for convex $f$.
+\end{thm}
+\begin{proof}
+First assume that $X_0 =0, \abs{X} \le k, X\in \sH$. Let $g\in C^\infty_c$ be a left mollifier such that ${\rm supp }g \subseteq (\infty,0], g \ge 0, \int g =1$. Define $f_n := n(f\ast g(n\cdot))$, then $f_n$ is convex, $C^2$, and $f'_n \uparrow f'$. By It\^o,
+\begin{align*}
+& f_n(X_t) = f_n(X_0) + \int_{0^+}^t f'_n(X_{s^-}) \,d X_s + A^n_t,\\
+& A^n_t = \sum_{0<s\le t}[f_n(X_s) - f_n(X_{s^-}) - f'_n(X_{s^-}) \Delta X_s] + \frac{1}{2} \int_{0^+}^t f''_n(X_{s^-}) \,d [X]^c_s.
+\end{align*}
+Pass to ucp-limits via bounded convergence (since $\abs{X} \le k$), we have $f(X_t) = f(X_0) + \int_{0^+}^t f(X_{s^-}) \,d X_s + A_t$, where the limit of $A$ is obtained as the residual term.
+
+Next, we use pre-localization argument to relax the assumptions of boundedness and $X\in \sH$. And finally, we relax the condition of $X_0=0$ by consider multi-dimensional semimartingales and set $g(x,y):=f(x+y)$. Apply the result for $g(X_t - X_0, X_0)$.
+\end{proof}
+
+\begin{cor}
+$\abs{X}, X^{\pm}, X\wedge Y, X\vee Y$ are semimartingales.
+\end{cor}
+
+
+\begin{thm}[Preservations under transformations]
+Semimartingales form a vector space, algebra, lattice, and convex transformations of semimartingales are still semimartingales.
+\end{thm}
+
+
+\begin{defn}[Local time]
+Define $h_a(x):=\abs{x-a}$. Set $A^a$ to be the $A$ process from It\^o decomposition of $h_a$. The local time of $X$ at $a$ is $L^a_t = A^a_t - \sum_{0<s\le t}[h_a(X_s)-h_a(X_{s^-}) - h'_a(X_{s^-}) \Delta X_s]$
+\end{defn}
+
+
+\begin{thm}[Tanaka's formula: from absolute value to truncation]
+Let $X$ be a semimartingale, then
+\begin{align*}
+(X_t-a)^+ = \\
+(X_t-a)^- = 
+\end{align*}
+\end{thm}
+
+
+\begin{thm}[Singularity of $L^a$ as a measure]
+Let $X$ be a semimartingale, $L^a_t$ be the local time of $X$ at $a$, then $d L^a$ is carried by $\{X_{s^-} = X_s =a\}$
+\end{thm}
+\begin{proof}
+Note that $\{X_{s^-}=a\} \backslash \{X_{s^-}=X_s=a\}$ is at most countable. It suffices to show that $\{X_{s^-}=a\}$ carries the measure $d L^a$.
+
+Let $T$ be a stopping time with $0< S\le T$ and $[S,T) \subseteq \{X_{s^-} < a\}$. So in particular, $X\le a$ on $[S,T)$. Now use Tanaka's formula.
+
+Now construct random time intervals to approximate $\{X_{s^-}< a\}$. For $r\in \mathbb{Q}$, let
+\begin{align*}
+& S_r := r\I_{\{X_{r^-}<a\}} + \infty \\
+& T_r := \inf\{t>S_r : X_{t^-}\ge a\}
+\end{align*}
+\end{proof}
+
+
+\begin{thm}[Genearalized It\^o's formula, Meyer It\^o]
+Let $f$ be the difference of two convex functions (i.e. $f'$ is a BV function) with $\mu$ being the second order derivative signed measure. Then
+$$f(X_t) = f(X_0) + \int_{0^+}^t f'(X_{s^-}) \,d X_s  + \sum + \frac{1}{2}\int_{\mathbb{R}} L^a_t \mu(d a)$$
+\end{thm}
+\begin{proof}
+The idea is to rewrite $f$ as the superposition of $h_a$'s, and apply Tanaka's formula.
+
+Obviously the formula holds for affine functions as $\mu\equiv 0$.
+
+Next, if $\mu$ has finite total measure on compacta, then let $g(x):= \frac{1}{2} \int \abs{x-y} \mu(dy)$ and we have that $f-g$ is affine. So assume $f(x) = \frac{1}{2} \int_a^b \abs{x-y} \mu(dy)$ and we need to show $\frac{1}{2}\int_{\mathbb{R}} L^a_t \mu(da) = f(X_t) - $. Define
+\begin{align*}
+\end{align*}
+Use stochastic Fubini to write $\int_{0^+}^t f'(X_{s^-}) \,d X_s = \frac{1}{2} \int_{\mathbb{R}} \int_{0^+}^t {\rm sgn}(X_{s^-}-a) \,d X_s \,d\mu$
+
+Use localization and hence assume that $f$ is convex and ${\rm supp }\mu$ supported between
+\end{proof}
+
+
+\begin{cor}[Stochastic coarea formula]
+
+\end{cor}
+
+\begin{cor}[Quadratic variations in terms of local times]
+
+\end{cor}
+
+\begin{cor}[Meyer-Tanaka]
+
+\end{cor}
+
+
+%% Mar 9, 2017, Thursday, Week 8
+\begin{thm}[It\^o's formula for $f'$ absolutely continuous]
+
+\end{thm}
+
+\begin{thm}[]
+Let $X$ be a continuous local martingale, $X_0 =0$. Let $\alpha\in (0,1)$. Then $Y_t = \abs{X_t}^\alpha$ is not a semimartingale unless $X\equiv 0$.
+\end{thm}
+\begin{proof}
+Assume by localization that both $\abs{X}$ and $[X,X]$ are bounded. Then by Tanaka-Meyer, we have $\abs{X_t} = \int_0^t {\rm sgn}(X_s) \,d X_s + L^0_t$. Since $L^0$ is only supported on $\{X_s=0\}$, rewrite
+$$L^0_t = \int_0^t \I_{\{X_s=0\}} \,d L^0_s = \int_0^t \I_{\{X_s=0\}} \,d\abs{X_s} - \int_0^t \I_{\{X_s=0\}} {\rm sgn}(X_s) \,d X_s$$
+By It\^o isometry, 
+
+Consider $f(y):=y^\beta$, where $\beta=1/\alpha$.
+\end{proof}
+
+
+\begin{thm}[Kolmogorov Lemma]
+Let $(E,d)$ be a complete metric space, and let $U^x$ be an $E$-valued random variable for all $x$ in the dyadic rationals in $\mathbb{R}^n$. Suppose that for all $x,y$, $d(U^x,U^y)$ is a random variable (Note that if $E$ is not separable, then $\mathcal{B}(E) \otimes \mathcal{B}(E) \ne \mathcal{B}(E\times E)$ since the latter has much more open sets). Assume there exist positive constant $\epsilon, C, \beta$ such that $\E(d(U^x,U^y))^\epsilon \le C\norm{x-y}^{n+\beta}, \forall x,y$, where $\norm{\cdot}$ is the $L^\infty$-norm. Then for almost all $\omega$, $x\mapsto U^x$ has a continuous extension to $\mathcal{R}^n$.
+\end{thm}
+\begin{proof}
+First prove the theorem for the unit cube $[0,1]^n$. Let $\Delta_m :=\{k/2^m, 0\le k \le 2^m \}^n$ be the $m$-th dyadic grid, and $\Delta: = \cup_{m=1}^\infty \Delta_m$. Two points $x,y \in \Delta_m$ are said to be neighbours if $\norm{x-y} \le 1/2^m$. By Chebyshev, $\P[d(U^x,U^y) \ge 2^{-\alpha m}] = \P[(d(U^x,U^y))^\epsilon \ge 2^{-\epsilon \alpha m}] \le 2^{\epsilon \alpha m} \E[(d(U^x,U^y))^\epsilon] \le C 2^{\epsilon \alpha m} 2^{-m(\beta+n)}$.
+\par
+Let $\Lambda_m := \{\omega : \exists x,y \in \Delta_m \textrm{ neighbours }, d(U^x,U^y) \ge 2^{-\alpha m}\}$. Each $x\in \Lambda_m$ has at most $3^n$ neighbours. There are $2^{(m+1)n}$ points in $\Lambda m$. $\P(\Lambda_m) \le C$
+Choose $\alpha>0$ so small that $\delta = \beta - \epsilon \alpha >0$, then by Borel-Cantelli, $\P(\Lambda_m \textrm{ i.o.}) =0$.
+\par
+Choose $\omega$ such that $\forall m\ge m_0(\omega), d(U^x,U^y) \le 2^{-\alpha m}, \forall x,y$. We want to show that $x\mapsto U^x(\omega)$ is uniformly continuous on $\Delta$. Expand $x$ and $y$ in binary terms to be $x=\sum_{j=1}^\infty \frac{1}{2^j} a_j$ and $y=\sum_{j=1}^\infty \frac{1}{2^j} b_j$. Assume that $\norm{x-y} \le 1/2^m$, then $\norm{S_m} = \norm{u_m - v_m} = \norm{\sum_{j=1}^m \frac{1}{2^j} a_j - \sum_{j=1}^m \frac{1}{2^j} b_j} \le 1/2^{m-1}$, and $\norm{R_m} = \norm{\sum_{j=m+1}^\infty \frac{1}{2^j} a_j - \sum_{j=m+1}^\infty \frac{1}{2^j} b_j} \le 1/2^{m}$, where $x-y=S_m + R_m$. Let $u_m$ and $v_m$ be the $m$-th truncation of the binary expansions of $x$ and $y$ respectively, then by definition $u_m$ and $v_m$ are neighbours in $\Delta_{m-1}$, so $d(U^{u_m}, U^{v_m}) \le 2^{-\alpha(m-1)}$. But $d(U^{u_m},U^x) \to 0$ as $m\uparrow \infty$ and similarly for $y$, so $d(U^x,U^y)$ can be controlled small as long as $x$ and $y$ are.
+\par
+On every compactum of $\mathbb{R}^n$, $x\mapsto U^x$ admits a continuous extension, so it can be extended continuously to the entire space $\mathbb{R}^n$.
+\end{proof}
+
+
+\begin{cor}[Kolmogorov's continuity criterion]
+Let $(X^a_t)_{t\ge 0, a\in \mathbb{R}^n}$ be a parametrized family of stochastic process such that $t\mapsto X^a_t$ is cadlag a.s. for each $a\in \mathbb{R}^n$. Suppose that $\E\{\sup_{0\le s\le t}\abs{X^a_s - X^a_t}^\epsilon \} \le C(t) \norm{a-b}^{n+\beta}, \forall a,b$. Then there exists a version $\hat{X}^a_t$ of $X^a_t$ that is $\mathcal{B}(\mathbb{R}^n) \otimes \mathcal{B}(\mathbb{R}_+) \otimes \mathcal{F}$-measurable, cadlag in $t$ and uniformly continuous in $a$ on compacta. The null set can be chosen independently of $t$.
+\end{cor}
+\begin{proof}
+We choose $(E,d) = (D[0,t],\norm{\cdot}_{L^\infty})$ in the previous lemma.
+\end{proof}
+
+
+%% Week 9, spring break, no class
+
+
+%% Mar 21, 2017, Tuesday, Week 10
+\begin{defn}[Hypothesis A]
+Let $X$ be a semimartingale. $X$ satisfies Hypothesis A if the jumps are summable over compact time intervals, i.e. $\forall t>0, \sum_{0<s\le t} \abs{\Delta X_s} < +\infty, \P$-a.s.
+\end{defn}
+
+\begin{eg}[Brownian semimartingale]
+Let $(\Omega,\mathcal{F}, \P, \{\mathcal{F}_t\}_{t\in\mathbb{R}_+})$ be a Brownian probability space. Every local martingale is continuous, so by the Fundamental Theorem of Local Martingale, every semimartingale admits a (non-unique) decomposition $X=M+A$ such that $A$ is of finite variations and $\Delta X = \Delta A$. Thus, $\sum_{0<s\le t}\abs{\Delta X_s} = \sum_{0<s\le t}\abs{\Delta A_s} < \infty$. So $X$ satisfies Hypothesis A.
+\end{eg}
+
+Suppose that $X$ satisfies Hypothesis A, then we can extract its jump part $J_t := \sum_{0<s\le t}\Delta X_s$, then $J$ is a pure jump process of finite variations, and $X-J$ is a continuous semimartingale. We denote the unique local martingale part in the canonical decomposition of $X-J$ by $X^c$. It is well-defined.
+
+Given a semimartingale $X$, and let $Z$ be another semimartingale, define $(\hat{Z})^a_t := \int_{0^+}^t \I_{\{X_{s^-}>a\}} \,d Z_s$.
+
+\begin{thm}[Joint continuity of hat process]
+Let $X$ be a semimartingale satisfying Hypothesis A. Then there exists a version of $(\hat{X}^c)^a_t$ such that $(a,t,\omega) \mapsto (\hat{X}^c)^a_t(\omega)$ is $\mathcal{B}(\mathbb{R}) \otimes \pred$-measurable, and everywhere jointly continuous in $(a,t)$.
+\end{thm}
+\begin{proof}
+By pre-stopping, we can assume that $X-X_0 \in \sH$.
+\par
+Fix $-\infty < a < b < \infty$, define $\alpha_t(a,b) := \E\left[\left(\int_0^t \I_{\{a< X_{s^-}\le b\}} \,d [X,X]^c_s \right)^2 \right] = \E\left[\left(\int_a^b L^u_t(X) \,d u\right)^2 \right]$.
+\par
+Estimate $\alpha_t(a,b) = \E\left[\left(\int_a^b L^u_t(X) \,d u\right)^2 \right] \le (b-a) \E\left[ \int_a^b (L^u_t(X))^2 \,d u\right] \le (b-a)^2 \sup_{a<u\le b} \E\left[(L^u_t(X))^2 \right]$.
+\par
+By definition, $0\le L^u_t(X) \le \abs{X_t-X_0} - \abs{X_0-u} - \int_{0^+}^t {\rm sgn}(X_{s^-}-u) \,d X_s \le \abs{X_t-X_0} - \int_{0^+}^t {\rm sgn}(X_{s^-}-u) \,d X_s$.
+\begin{align*}
+\E\left[(L^u_t(X))^2\right] \le 2\E[(X_t-X_0)^2] + 2\E\left[\left(\int_{0^+}^t {\rm sgn}(X_{s^-}-u) \,d X_s\right)^2 \right] \le 8\norm{X-X_0}^2_{\sH}.
+\end{align*}
+
+Therefore, $\alpha_t(a,b) \le 8(b-a)^2 \norm{X-X_0}^2_{\sH}, \forall t>0$, and hence by monotone convergence, $\alpha_\infty(a,b) \le 8(b-a)^2 \norm{X-X_0}^2_{\sH}$. Then by BDG inequality,
+\begin{align*}
+\E\left[\sup_s \abs{(\hat{X}^c)^b_s - (\hat{X}^c)^a_s}^4 \right] \le C^4 \E\left[\langle (\hat{X}^c)^b - (\hat{X}^c)^a \rangle^2_\infty \right] = C_4 \alpha_\infty(a,b) \le C(b-a)^2\norm{X-X_0}^2_{\sH}
+\end{align*}
+Apply Kolmogorov's Lemma, and we obtain continuity.
+\end{proof}
+
+
+\begin{thm}[Joint right continuity of local time]
+Let $X$ be a semimartingale satisfying Hypothesis A. jointly right continuous in $a$ and continuous in $t$.
+\end{thm}
+\begin{proof}
+Write $X=M+A+J$ due to Hypothesis A. By Tanaka's formula, we have
+\begin{align*}
+\frac{1}{2}L^t_a(X) + S^a_t + (\hat{M})^a_t + (\hat{A})^a_t + (\hat{J})^a_t = (X_t-a)^+ - (X_0-a)^+
+\end{align*}
+Tackling it term-by-term using dominated convergence.
+\end{proof}
+
+\begin{cor}[Jumps in local time]
+$L^a_t(X) - L^{a^-}_t(X) = 2\left[(\hat{A})^{a^-}_t - (\hat{A})^a_t\right] = 2\int_{0^+}^t \I_{\{X_{s^-}=a\}} \,d A_s = 2\int_{0^+}^t \I_{\{X_{s}=a\}} \,d A_s$.
+\end{cor}
+
+\begin{cor}[Continuity of local time]
+$L^a_t(X)$ is continuous at $a=a_0$ iff $\int_{0^+}^\infty \I_{\{X_s=a_0\}} \,d \abs{A_s}$.
+\end{cor}
+
+\begin{cor}[Local time in Dirac delta]
+\begin{align*}
+L^a_t(X) &= \lim_{\epsilon\downarrow 0} \frac{1}{\epsilon} \int_0^t \I_{\{a\le X_s \le a+\epsilon\}} \,d [X,X]^c_s, \\
+L^{a^-}_t(X) &= \lim_{\epsilon\downarrow 0} \frac{1}{\epsilon} \int_0^t \I_{\{a-\epsilon \le X_s \le a\}} \,d [X,X]^c_s.
+\end{align*}
+\end{cor}
+
+
+%% Mar 23, 2017, Thursday, Week 10
+Bouleau-Yor Formula
+
+\section{Az\'ema's martingale}
+Az\'ema's martingale is one important example of the solution to Em\'ery's structure equation, and a semimartingale violating the usual hypothesis.
+
+\begin{defn}[Az\'ema's martingale]
+Let $(\Omega, \mathcal{F}, \mathbb{F}, \P)$ be a Brownian probability space, $B$ be a Brownian motion. Set $X_t := {\rm sgn}(B_t)$, and let $\mathbb{G}$ be the natural filtration of $X$ satisfying the usual conditions. Set $M_t := \E[B_t \,|\, \mathcal{G}_t]$, which is a $\mathbb{G}$-martingale. $M$ is called the Az\'ema's martingale.
+\end{defn}
+
+\begin{defn}[Last exit time]
+The last exit time of a level $a$ before time $t$ of a continuous process $X$ is defined to be $g_t := \sup\{s\le t : X_s=a\}$. In the following, we keep $a=0$ and $X=B$.
+\end{defn}
+
+Recall the reflection principle of Brownian motion.
+
+\begin{thm}[L\'evy arcsine law]
+The process $g_t$ is $\mathbb{G}$-adapted, and $\P(g_t \le s) = \frac{2}{\pi} \arcsin \sqrt{\frac{s}{t}}, \forall s\le t$.
+\end{thm}
+\begin{proof}
+Rewrite the set $\{g_t \le s\} = \left(\cap_{u\in \mathbb{Q} \cap (s,t)} \{B_u > 0\}\right) \cup \left(\cap_{u\in \mathbb{Q} \cap (s,t)} \{B_u < 0\}\right) \in \mathcal{G}_t$. So $g_t$ is an adapted process.
+\par
+\begin{align*}
+& \P(g_t > s) = 2\P(g_t > s, B_s < 0) = 2\P\left(\sup_{s\le u\le t}B_u > 0, B_s < 0\right) = 4\P(B_t > 0, B_s < 0) \quad \textrm{let }(X,Y) \sim N(0,\rm{id}_2) \\
+=& 4\P\left(X<0, \sqrt{t-s}Y+\sqrt{s}X > 0\right) = 4 \int_{-\infty}^0 \int_{-\sqrt{\frac{s}{t-s}}x}^\infty \frac{1}{2\pi}\exp\left(-\frac{1}{2}(x^2 + y^2)\right) \,d y \,d x \quad \textrm{use polar coordinate} \\
+=& 4 \int_0^\infty \int_{\pi/2}^{\pi-\arcsin\sqrt{s/t}} \frac{1}{2\pi} e^{-r^2/2} r \,d \theta \,d r = 1-\frac{2}{\pi} \arcsin \sqrt{s/t}.
+\end{align*}
+\end{proof}
+
+
+%% Mar 28, 2017, Tuesday, Week 11
+\begin{thm}[Expression of Az\'ema's martingale]
+Let $M$ be an Az\'ema's martingale, then $M_t = {\rm sgn}(B_t) \sqrt{\pi/2}\sqrt{t-g_t}$.
+\end{thm}
+\begin{proof}
+$M_t = \E(B_t \big| \mathcal{G}_t) = {\rm sgn}(B_t) \E(\abs{B_t} \big| \mathcal{G}_t)$, where $\mathcal{G}_t = \sigma({\rm sgn}(B_s), s\le t, g_t)$.
+\par
+If $s< g_t$, then ${\rm sgn}(B_s) \perp \abs{B_t}$, i.e. we can not get any information from the history of signs before $g_t$. If $s> g_t$, then ${\rm sgn}(B_t) = {\rm sgn}(B_s)$. Therefore, $\E(\abs{B_t} \big| \mathcal{G}_t) = \E(\abs{B_t} \big| g_t)$.
+\par
+Thus, we want to show that $\E(\abs{B_t} \big| g_t =s) = \sqrt{\frac{\pi}{2}}\sqrt{t-s}$.
+\begin{align*}
+& \E(\abs{B_t} \I_{\{g_t \le s\}}) = 2\E(\abs{B_t} \I_{\{g_t \le s, B_s >0\}}) = 2\E(\abs{B_s}\I_{T=t, B_s>0}), \textrm{where $T$ is the first hitting time of zero after time $s$} \\
+=& 2\E(\abs{B_T} \I_{\{T=t, B_s>0\}}) = 2\E(\abs{B_T} \I_{\{B_s>0\}}) = \E(\abs{B_s}) = \sqrt{\frac{2}{\pi}} \sqrt{s}.
+\end{align*}
+Let the condition expectation of $g_t =s$ be $h(s)$, then we have $\sqrt{\frac{2}{\pi}}\sqrt{s} = \int_{-\infty}^s h f_{g_t}$. Solve the equation for $h$, we obtain $h(s) = \sqrt{\frac{\pi}{2}}\sqrt{t-s}$.
+\end{proof}
+
+\begin{cor}[Az\'ema filtration coincides with Brownian sign filtration]
+Let $M$ be an Az\'ema's martingale, then $\mathcal{H}_t = \sigma(M_s, s\le t) =\mathcal{G}_t$.
+\end{cor}
+\begin{proof}
+Observe that ${\rm sgn}(B_t) = {\rm sgn}(M_t)$.
+\end{proof}
+
+\begin{thm}[Local time of Az\'ema's martingale]
+Let $M$ $L^a_t(M)\equiv 0$ iff $a\ne 0$.
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
+
+\begin{thm}[Example of non-semimartingale]
+$M$ is not an $\mathbb{F}$-semimartingale.
+\end{thm}
+\begin{proof}
+If $M$ was a Brownian semimartingale, it would satisfy Hypothesis A, but we have a contradiction.
+\end{proof}
+
+
+\begin{thm}[Local time Az\'ema's martingale at level zero]
+$L^0(B) = L^0(M)$ and $L^0(B)$ is adapted to $\mathbb{G}$.
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}[Quadratic variations of Az\'ema's martingale]
+$[M,M]^c_t \equiv 0$, $[M,M]_t = \sum_{0<s\le t}(\Delta M_s)^2 = \frac{\pi}{2} g_t$.
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}[Quadratic characteristic of Az\'ema's martingale]
+$[M,M]_t - \frac{\pi}{4}t$ is a $\mathbb{G}$-martingale so that $\langle M,M\rangle_t = \frac{\pi}{4}t$.
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
+
+%% Mar 30, 2017, Thursday, Week 11
+\section{Sigma martingales}
+We have already seen that local martingale is unstable under (general) stochastic integrations if integrand is not controlled. We will study the closure of local martingales under stochastic integrations in this section, which is the class of sigma martingales. Sigma martingale is also a very common object in finance. 
+
+\begin{defn}[Sigma martingale]
+Let $X$ be a $\mathbb{R}^d$-semimartingale. $X$ is called a sigma martingale if there is a $\mathbb{R}^d$-martingale $M$ and a non-negative predictable integrable $H \in L_+(M)$ such that $X= H\cdot M$. 
+\end{defn}
+
+\begin{thm}[Sigma martingales for a vector space]
+The collection of sigma martingales form a vector space.
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}[Equivalent characterization of sigma martingales]
+Let $X$ be a semimartingale. Then the followings are equivalent:
+\begin{enumerate}[(i)]
+\item $X$ is a sigma martingale.
+\item $X = H\cdot M$ for some local martingale $M$.
+\item $X = H\cdot M$ for some martingale $M$.
+\item $X = H\cdot M$ for some $\mathcal{H}^1$-martingale $M$.
+\end{enumerate}
+In all of the above, $H\in L_+(M)$ and $H>0$, and it could be different in each clause.
+\end{thm}
+\begin{proof}
+The implication $(iv) \Rightarrow (iii) \Rightarrow (ii)$ is trivial. All we have to show is $(i) \Rightarrow (iv)$ and $(ii) \Rightarrow (i)$.
+\par
+Assume (i) and that $M_0 =0$. By localizing, $\exists \{T_n\}_{n=1}^\infty$ localizing sequence, such that $M^{T_n} \in \mathcal{H}^1, \forall n\in \mathbb{N}_+$. Let $T_0 =0$. Define $N^n := \left(\frac{H}{1+H} \I_{(T_{n-1}, T_n]}\right) \cdot M^{T_n} \in \mathcal{H}^1$. Find a strictly positive sequence $\{\alpha_n\}$, such that $N := \sum_{n=1}^\infty \alpha_n N^n$ is absolute summable in $\mathcal{H}^1$. Define $J := \frac{H}{1+H} \sum_{n=1}^\infty \alpha_n^{-1} \I_{(T_{n-1}, T_n]}$. By associativity, we have that $J \cdot N = H \cdot M$, where $J \in L(N), J>0$ and $N\in \mathcal{H}^1$. So (iv) is true.
+\par
+The proof of $(ii) \Rightarrow (i)$ follows from the same argument.
+\end{proof}
+
+\begin{cor}[Local sigma martingales are sigma martingales]
+Local sigma martingales are sigma martingales.
+\end{cor}
+\begin{proof}
+Find $\{T_n\}_{n=1}^\infty$ a localizing sequence and set $T_0 := 0$, such that $X^{T_n}$ is a sigma martingale. Then from above, for each $n$, $X^{T_n} = H^n \cdot M^n$ for some $M^n \in \mathcal{H}^1$ and $H^n \in L_{++}(M^n)$. Pick $\phi_n$ such that $\norm{(\phi^n H^n) \cdot M^n}_{\mathcal{H}^1} < 2^{-n}$ (e.g. $\phi^n := \frac{1}{2^n H^n \norm{M^n}_{\mathcal{H}^1}}$). Define $\phi^0 := \phi^1 \I_{0}$, $\phi := \phi^0 \I_{0} + \sum_{n=1}^\infty \phi^n \I_{(T_{n-1}, T_n]}$. Then by construction $\norm{\phi \cdot X}_{\mathcal{H}^1} < \infty$ and hence $\phi \cdot X \in \mathcal{H}^1$. It is then obvious that $\frac{1}{\phi} \cdot (\phi \cdot X)$.
+\end{proof}
+
+\begin{cor}[Local martingale is sigma martingale]
+Local martingales are sigma martingales.
+\end{cor}
+\begin{proof}
+This is exactly $(ii) \Rightarrow (i)$. Or we use the corollary above.
+\end{proof}
+
+\begin{thm}[Stability of sigma martingales]
+If $X$ is a sigma martingale and $H\in L(X)$, then $H\cdot X$ is a sigma martingale.
+\end{thm}
+\begin{proof}
+We know that the collection of sigma martingale forms a vector space. So we can break down the integrand into positive part and negative part and apply associativity of stochastic integrations.
+\end{proof}
+
+\begin{thm}[Special sigma martingale is local martingale]
+Let $X$ be a sigma martingale that is also a special semimartingale, then $X$ is a local martingale.
+\end{thm}
+\begin{proof}
+$X$ is special so we have a canonical decomposition $X=M+A$ where $M$ is a local martingale while $A$ is predictable and of finite variations on compacta. WLOG, assume $A_0 =0$.
+\par
+Let $X=G\cdot N$ with $G\in L_{++}(N)$ and $N\in \mathcal{H}^1$. Pick $\phi \in L_{++}(X)$ (in particular $1/G$) such that $\phi \cdot X = (\phi G) \cdot N$ is a martingale. In particular, we can assume that $\phi \in L^\infty$ by associativity and truncation: $\frac{\phi}{1+\phi} \cdot X = \frac{1}{1+\phi} \cdot (\phi \cdot X)$. Note that $\phi \cdot A \in \pred$ and $\phi \cdot A = \phi \cdot X - \phi \cdot M \in \mathcal{M}^{loc}$. Thus, $\phi \cdot A$ is a predictable local martingale of finite variations on compacta and hence zero.
+\par
+Replace $\phi$ with $J \phi$ where $J$ is the Radon-Nikodym derivative of $\frac{d A_s}{d \abs{A}_s} \in L^\infty_+$, we get $0 = \int_0^t \phi_s J_s \,d A_s = \int_0^t \phi_s \,d \abs{A}_s$. Thus, $A \equiv 0$, and hence $X=M$, which is a local martingale.
+\end{proof}
+
+\begin{cor}[Sufficient condition for sigma martingale to be local]
+Sigma martingales of locally integrable running maximum $X^\ast$ or $(\Delta X)^\ast$ are local martingales. As a special case, sigma martingales with bounded jumps are local martingales. In particular, continuous sigma martingales are local martingales.
+\end{cor}
+
+\end{document}
