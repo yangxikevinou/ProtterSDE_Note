@@ -23,7 +23,7 @@
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
 
-% shorthand notations
+%%%%%% universal shorthand notations
 \newcommand{\E}{\mathbb{E}} % expectation
 \renewcommand{\P}{\mathbb{P}} % probability
 \newcommand{\I}{\mathbb{I}} % indicator
@@ -37,7 +37,9 @@
 \renewcommand{\L}{\mathbb{L}} % left continuous process
 \newcommand{\bL}{\mathrm{b}\L} % bounded left continuous process
 
-% info
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% info
 \title{ProtterSDE_Note}
 \author{David Huckleberry Gutman and Yangxi Ou \\* Department of Mathematical Sciences \\* Carnegie Mellon University}
 \date{Fall 2016 and Spring 2017}
@@ -64,17 +66,97 @@
 \end{center}
 
 
-% purpose and summary
-\chapter{}
+%%%%%% preface
+\chapter{A note of the note}
+% background
+% authors
+% purpose of the note
+% philosophy, pre-requisite, scope, and organization of the note
+% version control and to-do list / known alternative approach
+% copyright and acknowledgement
+
+%%%%%%%%%%%%
 
 
 \mainmatter
 
-% chapter 1
+%%%%%% chapter 1
 \chapter{Preliminaries (of stochastic analysis) and L\'evy processes}
 
+This introductory chapter consists of three main parts:
+\begin{itemize}
+\item Section 1.1 and 1.2 define the central concepts and give standard assumptions of (modern) stochastic analysis;
+\item Section 1.3 and 1.4 introduce some classical, canonical and fundamental examples of stochastic processes characterized by independent identical increments;
+\item the remaining sections then discuss more advanced concepts and delicate technical issues in stochastic analysis, addressing the necessity of stochastic analysis despite the existence of a well-developed real analysis.
+\end{itemize}
 
-% chapter 2
+This note emphasizes on the L\'evy processes, for they contain both ubiquitous examples of stochastic processes and celebrated theorems and elegant theories in probability. This corresponds to the second part Section 1.3 and 1.4, culminating at the L\'evy-Khintchine representation and L\'evy-It\^o decomposition.  We did not go through all the details in Section 1.1, 1.2, and 1.6 since the authors had already been very familiar with these contents. However, we shall prepare readers for further studies by underscoring key concepts to appear, including martingality, (strong) Markovian property, localization, and topology.
+
+
+\section{Basic definitions and notation}
+
+\begin{defn}[Usual hypothesis]
+
+\end{defn}
+
+
+\begin{defn}[Stopping time and optional time]
+
+\end{defn}
+
+
+\begin{thm}[Hitting time and debut theorem]
+
+\end{thm}
+
+
+\begin{prop}[Stability of stopping times under operations]
+
+\end{prop}
+
+\section{Martingales}
+We skipped this section.
+
+
+\section{The Poisson process and Brownian motion}
+
+\begin{defn}[Counting process]
+
+\end{defn}
+
+
+\begin{defn}[Poisson process]
+
+\end{defn}
+
+
+\section{L\'evy processes}
+
+
+\section{Why the usual hypotheses?}
+
+\section{Local martingales}
+We skipped this section, but the following point is worth mentioning: the book has an alternate but equivalent definition of ``localization''.
+
+\begin{defn}[Local property and fundamental sequence]
+A property $\pi$ holds locally for a stochastic process $X$ (in a filtered probability space) if there exists an increasing sequence of stopping times $\{T_n\}_{n\in\mathbb{N}}$ called a fundamental sequence such that $T_n \uparrow +\infty$ a.s. and each process $X^{T_n} \I_{\{T_n >0\}}$ has property $\pi$. 
+\end{defn}
+
+\begin{rem}\
+\begin{itemize}
+\item The usual definition of local property involves the stopped process $X^{T_n}$ instead.
+\item Localization (along with pre-localization in later chapters) is a powerful and recurring technique in stochastic analysis. One common property $\pi$ in addition to martingality is integrability. A fundamental sequence plays a similar role as cutoff function or partition of unity in analysis.
+\end{itemize}
+\end{rem}
+
+\section{Stieltjes integration and change of variables}
+
+\section{Na\"ive stochastic integration is impossible}
+
+%%%%%%%%%%%%
+
+
+%%%%%% chapter 2
 \chapter{Semimartingales (as integrators) and stochastic integrals (of caglad integrands)}
 
 \section{Introduction to semimartingales (as continuous linear operators)}
