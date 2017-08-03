@@ -101,47 +101,67 @@ This note emphasizes on the L\'evy processes, for they contain both ubiquitous e
 
 
 \section{Basic definitions and notation}
+Probability is the quantitative study of uncertainty, and stochastic analysis is the study of evolution of uncertainty. {\color{red}(a short ``blah'' to introduce two points, time and information, i.e. filtration)}
+
+\begin{defn}[Stochastic Process]
+A \textbf{stochastic process}, $X$, is a collection of $\R^d$-valued random variables indexed by time with origin ($\R_+$), i.e. $X=(X_t)_{0\leq t<\infty}\subset m[(\Omega,\mathcal{F},P);\R^d]$. 
+\end{defn}
+
+
+\begin{defn}[Modification and Indistinguishability]
+Let $X,Y$ be stochastic processes on the same probability space. $X$ and $Y$ are \textbf{modifications} if $\forall t, P(X_t=Y_t)=1$. They are \textbf{indistinguishable} if $P(\forall t, X_t=Y_t)=1$.
+\end{defn}
+
+\begin{defn}[c{\`a}dl{\`a}g and c{\`a}gl{\`a}d]
+A process $X$ is \textbf{c{\`a}dl{\`a}g} (from French continu \`a droite, limit\'e \`a gauche) if its sample paths are right continuous with left limits a.s. It is \textbf{c{\`a}gl{\`a}d} (from French continu \`a gauche, limit\'e \`a droite) if its sample paths are left continuous with right limits a.s.
+\end{defn}
+
+\begin{thm}[Process path regularity and identification]
+Let $X$ and $Y$ be a.s. right (left) continuous processes that are modifications of each other. Then $X$ and $Y$ are indistinguishable.  
+\end{thm}
+
 
 \begin{defn}[Usual hypothesis]
 A filtered, complete probability space $(\Omega,\mathcal{F},\mathbb{F},P)$ is said to satisfy the \textbf{usual hypotheses} if
-\begin{enumerate}
-	\item $\mathcal{F}_0$ contains all $P$-null sets
-    \item $\mathbb{F}$ is right continuous, i.e. $\forall t\in[0,\infty),\mathcal{F}_t=\bigcap_{u>t}\mathcal{F}_u$
+\begin{enumerate}[(i)]
+	\item $\mathcal{F}_0$ contains all $P$-null sets, and
+    \item $\mathbb{F}$ is right continuous, i.e. $\forall t\in[0,\infty),\mathcal{F}_t=\bigcap_{u>t}\mathcal{F}_u$.
 \end{enumerate}
 \end{defn}
 
+\begin{defn}[Measurability]
+A stochastic process $X:[0,\infty)\times\Omega \to \R^d$ in a filtered measurable space $(\Omega, \mathcal{F}, \mathbb{F})$ is
+\begin{enumerate}[(i)]
+\item \textbf{measurable} if $X\in m\left[([0,\infty) \times \Omega, \mathcal{B}([0,\infty)) \otimes \mathcal{F}); \R^d \right]$;
+\item \textbf{adapted} (to the filtration $\mathbb{F}$) if $X_t\in m[(\Omega,\mathcal{F}_t);\R]$ for all $t\in[0,\infty)$;
+\item \textbf{progressively measurable} (with repsect to the filtration $\mathbb{F}$) if $X\in m\left[([0,t] \times \Omega, \mathcal{B}([0,t]) \otimes \mathcal{F}_t); \R^d \right]$ for all $t\in[0,\infty)$.
+\end{enumerate}
+\end{defn}
+
+
 \begin{defn}[Stopping time and optional time]
-$T\in \bar{m}(\Omega)$ is a \textbf{stopping time} if $\{T\leq t\}\in\mathcal{F}_t$ for every $t\in[0,\infty]$
+$T\in m(\Omega;[0,\infty])$ is a \textbf{stopping time} (respectively, an \textbf{optional time}) if $\{T\leq t\}\in\mathcal{F}_t$ (respectively, $\{T < t\}\in\mathcal{F}_t$) for every $t\in[0,\infty]$.
 \end{defn}
 
-\begin{defn}[Stochastic Process]
-A \textbf{stochastic process}, $X$, is a collection of $\R^d$-valued random variables indexed by time, i.e. $X=(X_t)_{0\leq t<\infty}\subset \bar{m}[(\Omega,\mathcal{F},P),\R^d]$. 
-\end{defn}
-
-\begin{defn}[Adapted]
-A stochastic process is \textbf{adapted} if $X_t\in m\mathcal{F}_t$ for all $t\in[0,\infty)$.
-\end{defn}
-
-\begin{defn}[Modification,Indistinguishability]
-Let $X,Y$ be stochastic processes on the same probability space. $X$ and $Y$ are \textbf{modifications} if $X_t=Y_t$ a.s. for every $t$. They are \textbf{indistinguishable} if $P(\forall t, X_t=Y_t)$.
-\end{defn}
-
-\begin{defn}[c{\`a}dl{\`a}g,c{\`a}gl{\`a}d]
-A process $X$ is \textbf{c{\`a}dl{\`a}g} if its sample paths are right continuous a.s. It is \textbf{c{\`a}gl{\`a}d} if its sample paths are left continuous a.s.
-\end{defn}
-
-\begin{thm}
-Let $X$, $Y$ be a.s. right (left) continuous processes that are modifications of each other. Then $X$ and $Y$ are indistinguishable.  
-\end{thm}
 
 \begin{thm}[Hitting time and debut theorem]
-
+Let $X$ be an adapted c\`adl\`ag process in $\R^d$ and $\Lambda \in \mathcal{B}(\R^d)$. The \textbf{hitting time} of $\Lambda$ for $X$, defined to be $T:=\inf\{t>0 : X_t\in\Lambda\}$, is a stopping time.
 \end{thm}
 
 
 \begin{prop}[Stability of stopping times under operations]
-
+The set of stopping times in a complete filtered probability space $\mathbf{Stop}(\Omega,\mathcal{F},\mathbb{F},P)$ is stable under maximum, minimum, addition, and dilation. In other words, $(\mathbf{Stop},\le)$ is a lattice, $(\mathbf{Stop},+)$ is a monoid, and $\cdot:[1,\infty)\times\mathbf{Stop} \to \mathbf{Stop}$ is a monoid action on $\mathbf{Stop}$. More precisely,
+\begin{enumerate}[(i)]
+\item $\{T_n\}_{n\in\mathbb{N}} \subset \mathbf{Stop} \Rightarrow \sup_{n\in\mathbb{N}} T_n, \inf_{n\in\mathbb{N}} T_n \in \mathbf{Stop}$;
+\item $S,T\in \mathbf{Stop} \Rightarrow S+T \in \mathbf{Stop}$;
+\item $\alpha \ge 1, S\in \mathbf{Stop} \Rightarrow \alpha S \in \mathbf{Stop}$.
+\end{enumerate}
 \end{prop}
+
+
+\begin{defn}[Stopping time $\sigma$-algebra]
+
+\end{defn}
 
 \section{Martingales}
 We skipped this section.
