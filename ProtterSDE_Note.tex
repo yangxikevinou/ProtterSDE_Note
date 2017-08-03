@@ -24,6 +24,7 @@
 \newtheorem{rem}[thm]{Remark}
 
 %%%%%% universal shorthand notations
+\newcommand{\R}{{\mathbb R}}%real numbers
 \newcommand{\E}{\mathbb{E}} % expectation
 \renewcommand{\P}{\mathbb{P}} % probability
 \newcommand{\I}{\mathbb{I}} % indicator
@@ -75,8 +76,14 @@
 % version control and to-do list / known alternative approach
 % copyright and acknowledgement
 
-%%%%%%%%%%%%
+\chapter{Notation}
+\begin{itemize}
+\item $\mathbb{R}$ verbatim
+\item $P$ probability measure
 
+\end{itemize}
+
+%%%%%%%%%%%%
 
 \mainmatter
 
@@ -96,14 +103,36 @@ This note emphasizes on the L\'evy processes, for they contain both ubiquitous e
 \section{Basic definitions and notation}
 
 \begin{defn}[Usual hypothesis]
-
+A filtered, complete probability space $(\Omega,\mathcal{F},\mathbb{F},P)$ is said to satisfy the \textbf{usual hypotheses} if
+\begin{enumerate}
+	\item $\mathcal{F}_0$ contains all $P$-null sets
+    \item $\mathbb{F}$ is right continuous, i.e. $\forall t\in[0,\infty),\mathcal{F}_t=\bigcap_{u>t}\mathcal{F}_u$
+\end{enumerate}
 \end{defn}
-
 
 \begin{defn}[Stopping time and optional time]
-
+$T\in \bar{m}(\Omega)$ is a \textbf{stopping time} if $\{T\leq t\}\in\mathcal{F}_t$ for every $t\in[0,\infty]$
 \end{defn}
 
+\begin{defn}[Stochastic Process]
+A \textbf{stochastic process}, $X$, is a collection of $\R^d$-valued random variables indexed by time, i.e. $X=(X_t)_{0\leq t<\infty}\subset \bar{m}[(\Omega,\mathcal{F},P),\R^d]$. 
+\end{defn}
+
+\begin{defn}[Adapted]
+A stochastic process is \textbf{adapted} if $X_t\in m\mathcal{F}_t$ for all $t\in[0,\infty)$.
+\end{defn}
+
+\begin{defn}[Modification,Indistinguishability]
+Let $X,Y$ be stochastic processes on the same probability space. $X$ and $Y$ are \textbf{modifications} if $X_t=Y_t$ a.s. for every $t$. They are \textbf{indistinguishable} if $P(\forall t, X_t=Y_t)$.
+\end{defn}
+
+\begin{defn}[c{\`a}dl{\`a}g,c{\`a}gl{\`a}d]
+A process $X$ is \textbf{c{\`a}dl{\`a}g} if its sample paths are right continuous a.s. It is \textbf{c{\`a}gl{\`a}d} if its sample paths are left continuous a.s.
+\end{defn}
+
+\begin{thm}
+Let $X$, $Y$ be a.s. right (left) continuous processes that are modifications of each other. Then $X$ and $Y$ are indistinguishable.  
+\end{thm}
 
 \begin{thm}[Hitting time and debut theorem]
 
